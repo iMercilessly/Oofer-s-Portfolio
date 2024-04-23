@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oofer!</title>
+    <title>Oofer_0123!</title>
     <meta content="Oofer | Official Website" property="og:title" />
     <meta content="The official website for the amazing twitch and discord admin, Oofer_0123" property="og:description" />
     <meta content="https://oofer.imerciless.com/" property="og:url" />
+    <meta content="https://oofer.imerciless.com/oofer.png" property="og:image" />
     <meta content="#000000" data-react-helmet="true" name="theme-color" />
     <style>
         body {
@@ -15,40 +16,136 @@
             font-family: Arial, sans-serif;
             padding: 20px;
             margin: 0;
+            overflow: hidden; /* Prevent particles from overflowing */
+            position: relative; /* Needed for absolute positioning of particles */
         }
         .footer {
-        	text-align: right;
+            text-align: right;
             max-width: 800px;
             margin: 0 auto;
+            font-size: 10px;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
         }
+        .servers {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .space {
+            max-width: 800px;
+            font-size: 38px;
+            margin: 0 auto;
+            text-align: center;
+        }
         h1 {
-        	text-align: center;
-            font-size: 36px;
+            text-align: center;
+            font-size: 50px;
+            z-index: 2; /* Ensure text is displayed above stars */
         }
         p {
-        	text-align: none;
+            text-align: none;
             font-size: 18px;
             line-height: 1.6;
+            z-index: 2; /* Ensure text is displayed above stars */
+        }
+        h2 {
+            text-align: none;
+            font-size: 28px;
+            line-height: 1.6;
+            z-index: 2; /* Ensure text is displayed above stars */
+        }
+        /* Star particles */
+        .star {
+            position: absolute;
+            font-size: 20px;
+            color: white;
+            opacity: 0;
+            animation: star-animation linear infinite;
+        }
+
+        /* Individual animation durations and delays */
+        .star:nth-child(1) {
+            animation-duration: 3s;
+            animation-delay: 0.5s;
+        }
+
+        .star:nth-child(2) {
+            animation-duration: 4s;
+            animation-delay: 1s;
+        }
+
+        .star:nth-child(3) {
+            animation-duration: 2s;
+            animation-delay: 1.5s;
+        }
+
+        /* Add more nth-child selectors to customize each star */
+
+        @keyframes star-animation {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0;
+                transform: scale(1.5);
+            }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Oofer</h1>
+    <h1>Oofer_0123</h1>
     <p>Hello! I'm oofer_0123, a twitch & discord admin!</p>
-    <p>I'm an admin for over 5+ Twitch Streamers and I am constatly joining their streams and helping out as much as I can!.</p>
+    <p>I'm an admin for over 5+ Twitch Streamers and I am constantly joining their streams and helping out as much as I can!</p>
+</div>
+<div class="space">
+    <h2>⸺⸺⸺⸺⸺ Channels ⸺⸺⸺⸺⸺</h2>
+</div>
+<div class="servers">
+    <p>- Alligator</p>
+    <p>- Dripsir</p>
+    <p>- Lldawn</p>
+    <p>- Iceeyekitten</p>
+    <p>- JonnyMackaronny</p>
+    <p>- Shadow_lengend8927</p>
+    <p>- XerZeZ</p>
+    <p>- Damiendman</p>
+    <p>- xReefed</p>
+    <p>- Mistermoostash</p>
+    <p>- TheTrueBen</p>
 </div>
 
-  <footer>
+<!-- Star particles -->
+<script>
+    // Create star particles dynamically
+    const numberOfStars = 50; // Adjust the number of stars as needed
+
+    for (let i = 0; i < numberOfStars; i++) {
+        createStar();
+    }
+
+    function createStar() {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.innerHTML = "✧";
+        star.style.left = Math.random() * window.innerWidth + 'px';
+        star.style.top = Math.random() * window.innerHeight + 'px';
+        star.style.animationDuration = Math.random() * 3 + 2 + 's'; // Random duration between 2 and 5 seconds
+        star.style.animationDelay = Math.random() * 2 + 's'; // Random delay up to 2 seconds
+        document.body.appendChild(star);
+    }
+</script>
+
+<footer>
     <div class="footer">
-      <p>&copy; 2024 iMerciless. All rights reserved.</p>
+      <h3>&copy; 2024 iMerciless. All rights reserved.</h3>
     </div>
-  </footer>
+</footer>
 
 </body>
 </html>
