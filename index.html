@@ -20,6 +20,11 @@
             overflow: hidden; /* Prevent particles from overflowing */
             position: relative; /* Needed for absolute positioning of particles */
         }
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            z-index: 2; /* Ensure text is displayed above stars */
+        }
         .footer {
             text-align: right;
             max-width: 800px;
@@ -33,31 +38,52 @@
         .servers {
             max-width: 800px;
             margin: 0 auto;
-            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-        .space {
-            max-width: 800px;
-            font-size: 38px;
-            margin: 0 auto;
-            text-align: center;
+        .server-card {
+            width: 200px;
+            height: 100px;
+            background-color: #333;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
         }
-        h1 {
-            text-align: center;
-            font-size: 50px;
-            z-index: 2; /* Ensure text is displayed above stars */
+        .server-card:hover {
+            transform: scale(1.1);
         }
-        p {
-            text-align: none;
+        .server-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 1;
+            transition: opacity 0.3s;
+            opacity: 0;
+        }
+        .server-card:hover::before {
+            opacity: 1;
+        }
+        .server-name {
             font-size: 18px;
-            line-height: 1.6;
-            z-index: 2; /* Ensure text is displayed above stars */
+            z-index: 2;
         }
-        h2 {
-            text-align: none;
+        .channels-heading {
+            text-align: center;
             font-size: 28px;
-            line-height: 1.6;
-            z-index: 2; /* Ensure text is displayed above stars */
+            margin-bottom: 20px;
         }
+
         /* Star particles */
         .star {
             position: absolute;
@@ -105,20 +131,44 @@
     <p>I'm an admin for over 5+ Twitch Streamers and I am constantly joining their streams and helping out as much as I can!</p>
 </div>
 <div class="space">
-    <h2>⸺⸺⸺⸺⸺ Channels ⸺⸺⸺⸺⸺</h2>
+    <div class="channels-heading">
+        <h2>⸺⸺⸺⸺⸺ Channels ⸺⸺⸺⸺⸺</h2>
+    </div>
 </div>
 <div class="servers">
-    <p>- Alligator</p>
-    <p>- Dripsir</p>
-    <p>- Lldawn</p>
-    <p>- Iceeyekitten</p>
-    <p>- JonnyMackaronny</p>
-    <p>- Shadow_lengend8927</p>
-    <p>- XerZeZ</p>
-    <p>- Damiendman</p>
-    <p>- xReefed</p>
-    <p>- Mistermoostash</p>
-    <p>- TheTrueBen</p>
+    <div class="server-card">
+        <p class="server-name">Alligator</p>
+    </div>
+    <div class="server-card">
+        <p class="server-name">Dripsir</p>
+    </div>
+    <div class="server-card">
+        <p class="server-name">Lldawn</p>
+    </div>
+    <div class="server-card">
+        <p class="server-name">Iceeyekitten</p>
+    </div>
+    <div class="server-card">
+        <p class="server-name">JonnyMackaronny</p>
+    </div>
+    <div class="server-card">
+        <p class="server-name">Shadow_lengend8927</p>
+    </div>
+    <div class="server-card">
+        <p class="server-name">XerZeZ</p>
+    </div>
+    <div class="server-card">
+        <p class="server-name">Damiendman</p>
+    </div>
+    <div class="server-card">
+        <p class="server-name">xReefed</p>
+    </div>
+    <div class="server-card">
+        <p class="server-name">Mistermoostash</p>
+    </div>
+    <div class="server-card">
+        <p class="server-name">TheTrueBen</p>
+    </div>
 </div>
 
 <!-- Star particles -->
